@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 
-export default function LeftSidebar({ data }) {
+export default function LeftSidebar({ data, showHeart }) {
     const [activeSection, setActiveSection] = useState('about');
+    const [likes, setLikes] = useState(() => {
+        const saved = localStorage.getItem('portfolio-likes');
+        return saved ? parseInt(saved) : 124; // Initial "vanity" count
+    });
+    const [isBlinking, setIsBlinking] = useState(false);
+    const blinkTimeoutRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +31,34 @@ export default function LeftSidebar({ data }) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        if (showHeart) {
+            handleLike(); // Trigger the blink effect automatically when it appears
+        }
+    }, [showHeart]);
+
+    const handleLike = () => {
+        if (isBlinking) return;
+        // Only increment the count if it's a manual click or first appearance
+        // But the user said "it should blink after it appears", 
+        // usually that implies a visual cue without necessarily double-counting.
+        // I'll keep the actual increment logic inside a manual guard if needed, 
+        // but for now, let's just trigger the animation.
+
+        setIsBlinking(true);
+        if (blinkTimeoutRef.current) clearTimeout(blinkTimeoutRef.current);
+        blinkTimeoutRef.current = setTimeout(() => {
+            setIsBlinking(false);
+        }, 1000);
+    };
+
+    const handleManualLike = () => {
+        const newLikes = likes + 1;
+        setLikes(newLikes);
+        localStorage.setItem('portfolio-likes', newLikes.toString());
+        handleLike();
+    };
+
     if (!data) return null;
 
     return (
@@ -38,6 +72,24 @@ export default function LeftSidebar({ data }) {
                     <h2 className="mt-2 text-xl font-medium tracking-tight text-slate-200 sm:text-2xl block w-full text-left m-0">
                         AI & Machine Learning Engineer
                     </h2>
+                    <div className="mt-6 flex flex-wrap gap-4 items-center">
+                        <div className="group/badge relative">
+                            <img
+                                src="/images/ibm_badge.png"
+                                alt="IBM Badge"
+                                className="h-12 w-auto opacity-80 transition-all group-hover/badge:opacity-100 group-hover/badge:scale-110"
+                                title="IBM Certified"
+                            />
+                        </div>
+                        <div className="group/badge relative">
+                            <img
+                                src="/images/aws_badge.png"
+                                alt="AWS Training Badge"
+                                className="h-12 w-auto opacity-80 transition-all group-hover/badge:opacity-100 group-hover/badge:scale-110"
+                                title="AWS Certified"
+                            />
+                        </div>
+                    </div>
                 </div>
 
                 <nav className="nav hidden lg:block mt-24 w-full">
@@ -69,29 +121,48 @@ export default function LeftSidebar({ data }) {
                 </nav>
             </div>
 
-            <ul className="mt-8 flex items-center justify-start gap-6 p-0 m-0 w-full list-none" aria-label="Social media">
-                <li className="shrink-0 text-xs text-slate-400 m-0 p-0">
-                    <a href={data.links.find(l => l.platform.toLowerCase() === 'github')?.url}
-                        target="_blank" rel="noreferrer" className="block hover:text-slate-200 transition-colors">
-                        <span className="sr-only">GitHub</span>
-                        <Github size={24} />
-                    </a>
-                </li>
-                <li className="shrink-0 text-xs text-slate-400 m-0 p-0">
-                    <a href={data.links.find(l => l.platform.toLowerCase() === 'linkedin')?.url}
-                        target="_blank" rel="noreferrer" className="block hover:text-slate-200 transition-colors">
-                        <span className="sr-only">LinkedIn</span>
-                        <Linkedin size={24} />
-                    </a>
-                </li>
-                <li className="shrink-0 text-xs text-slate-400 m-0 p-0">
-                    <a href={`mailto:${data.email}`}
-                        target="_blank" rel="noreferrer" className="block hover:text-slate-200 transition-colors">
-                        <span className="sr-only">Email</span>
-                        <Mail size={24} />
-                    </a>
-                </li>
-            </ul>
+            <div className="flex items-center gap-6 mt-8">
+                <ul className="flex items-center justify-start gap-6 p-0 m-0 list-none" aria-label="Social media">
+                    <li className="shrink-0 text-xs text-slate-400 m-0 p-0">
+                        <a href={data.links.find(l => l.platform.toLowerCase() === 'github')?.url}
+                            target="_blank" rel="noreferrer" className="block hover:text-slate-200 transition-colors">
+                            <span className="sr-only">GitHub</span>
+                            <Github size={24} />
+                        </a>
+                    </li>
+                    <li className="shrink-0 text-xs text-slate-400 m-0 p-0">
+                        <a href={data.links.find(l => l.platform.toLowerCase() === 'linkedin')?.url}
+                            target="_blank" rel="noreferrer" className="block hover:text-slate-200 transition-colors">
+                            <span className="sr-only">LinkedIn</span>
+                            <Linkedin size={24} />
+                        </a>
+                    </li>
+                    <li className="shrink-0 text-xs text-slate-400 m-0 p-0">
+                        <a href={`mailto:${data.email}`}
+                            target="_blank" rel="noreferrer" className="block hover:text-slate-200 transition-colors">
+                            <span className="sr-only">Email</span>
+                            <Mail size={24} />
+                        </a>
+                    </li>
+                </ul>
+
+                <div className={`flex items-center transition-all duration-1000 ${showHeart ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible -translate-x-4 pointer-events-none'}`}>
+                    <div className="h-8 w-px bg-slate-700/50 mx-4" />
+
+                    <button
+                        onClick={handleManualLike}
+                        className="group/heart flex items-center gap-2 text-slate-400 hover:text-slate-200 transition-colors focus:outline-none"
+                        aria-label="Like this portfolio"
+                    >
+                        <Heart
+                            size={22}
+                            className={`transition-colors ${isBlinking ? 'animate-blink-red' : 'group-hover/heart:text-rose-400'}`}
+                            fill={isBlinking ? "currentColor" : "transparent"}
+                        />
+                        <span className="font-mono text-sm font-bold">{likes}</span>
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
