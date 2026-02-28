@@ -1,0 +1,254 @@
+{
+  "header": {
+    "name": "Tejas Arondekar",
+    "phone": "+1 (778) 861-4677",
+    "email": "tejas.arondekar.canada@gmail.com",
+    "location": "Surrey, BC, Canada",
+    "links": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/tejasaron"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/tejas-arondekar-655165179/"
+      }
+    ]
+  },
+
+  "professional_summary": {
+    "summary": "AI and Machine Learning Engineer with strong experience in building end-to-end ML systems spanning data preprocessing, feature engineering, model training, explainability, and production deployment. Hands-on experience with predictive modeling, time-series forecasting, recommendation systems, and Generative AI concepts including LLMs and RAG. Proven ability to deploy scalable ML services using FastAPI and Docker, delivering data-driven solutions for business and operational decision-making."
+  },
+
+  "work_experience": [
+    {
+      "title": "Mathematics Tutor",
+      "company": "Oxford Learning Centres Inc.",
+      "startDate": "Nov 2023",
+      "endDate": "Oct 2024",
+      "responsibilities": [
+        "Delivered personalized tutoring in algebra, calculus, and geometry to high school students.",
+        "Supported exam preparation and problem-solving through structured analytical techniques.",
+        "Adapted teaching strategies to different learning styles and academic levels.",
+        "Improved student confidence and performance through concept reinforcement.",
+        "Communicated progress and improvement plans with parents."
+      ]
+    },
+    {
+      "title": "Geographic Information System Intern",
+      "company": "Paras Aerospace Pvt. Ltd.",
+      "startDate": "Feb 2023",
+      "endDate": "Jun 2023",
+      "responsibilities": [
+        "Built Python-based utilities to geotag aerial imagery using spatial metadata.",
+        "Applied OpenCV image processing techniques to generate orthomosaic outputs.",
+        "Automated geospatial data transformation and visualization workflows.",
+        "Validated outputs with technical stakeholders for accuracy and usability."
+      ]
+    },
+    {
+      "title": "Spatial Data Specialist I",
+      "company": "HERE Technologies",
+      "startDate": "Jul 2019",
+      "endDate": "May 2022",
+      "responsibilities": [
+        "Analyzed large-scale geospatial datasets using satellite imagery and mapping tools.",
+        "Worked with LiDAR data to map lane markings for autonomous driving applications.",
+        "Performed exploratory data analysis using Pandas, NumPy, and Matplotlib.",
+        "Automated reporting pipelines using ReportLab, Jinja2, and PyPDF2."
+      ]
+    },
+    {
+      "title": "Machine Learning Researcher Intern",
+      "company": "Indian Institute of Technology, Bombay",
+      "startDate": "Jan 2021",
+      "endDate": "Apr 2021",
+      "responsibilities": [
+        "Designed and optimized CNN architectures for computer vision tasks.",
+        "Built preprocessing pipelines including augmentation and normalization.",
+        "Applied transfer learning and regularization techniques.",
+        "Evaluated models using precision, recall, F1-score, and confusion matrices."
+      ]
+    }
+  ],
+
+  "skills": [
+  {
+    "category": "Programming Languages",
+    "items": ["Python", "SQL", "JavaScript"]
+  },
+  {
+    "category": "Machine Learning & Data Science",
+    "items": [
+      "Scikit-learn",
+      "XGBoost",
+      "Pandas",
+      "NumPy",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Time Series Analysis",
+      "Explainable AI (SHAP)"
+    ]
+  },
+  {
+    "category": "Deep Learning",
+    "items": [
+      "PyTorch",
+      "Neural Networks",
+      "Convolutional Neural Networks (CNNs)"
+    ]
+  },
+  {
+    "category": "Generative AI & LLMs",
+    "items": [
+      "Large Language Models (LLMs)",
+      "Transformers",
+      "Retrieval-Augmented Generation (RAG)",
+      "Embeddings",
+      "Prompt Engineering",
+      "Vector Databases"
+    ]
+  },
+  {
+    "category": "Frameworks & APIs",
+    "items": [
+      "FastAPI",
+      "REST API Design",
+      "Streamlit"
+    ]
+  },
+  {
+    "category": "Databases",
+    "items": [
+      "PostgreSQL",
+      "MongoDB",
+      "Vector Databases"
+    ]
+  },
+  {
+    "category": "MLOps & Deployment",
+    "items": [
+      "Docker",
+      "MLflow",
+      "Model Versioning",
+      "Experiment Tracking",
+      "Model Monitoring",
+      "Unit & Integration Testing"
+    ]
+  },
+  {
+    "category": "AWS Cloud & ML Services",
+    "items": [
+      "Amazon SageMaker",
+      "Amazon Bedrock",
+      "Amazon S3",
+      "AWS Lambda",
+      "Docker on ECS/ECR",
+      "CloudWatch",
+      "IAM"
+    ]
+  },
+  {
+  "category": "Development Practices & Collaboration",
+  "items": [
+    "Agile Methodologies",
+    "Scrum",
+    "Jira",
+    "Confluence"
+  ]
+}
+],
+
+  "education": [
+    {
+      "degree": "Master of Business Administration (MBA), International Business",
+      "institution": "Trinity Western University",
+      "startDate": "Sep 2023",
+      "endDate": "Apr 2025",
+      "coursework": [
+        "Business Analytics",
+        "International Strategy",
+        "Operations Management"
+      ]
+    },
+    {
+      "degree": "Master of Science (MS), Computer Science",
+      "institution": "University of Mumbai",
+      "startDate": "Jun 2019",
+      "endDate": "Apr 2021",
+      "coursework": [
+        "Machine Learning",
+        "Data Mining",
+        "Advanced Algorithms"
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "AWS Cloud Quest: Cloud Practitioner",
+      "issuer": "Amazon Web Services (AWS)",
+      "issueDate": "Feb 2026",
+      "credentialType": "Training Badge"
+    },
+    {
+    "name": "AWS Cloud Quest: Machine Learning",
+    "issuer": "Amazon Web Services (AWS)",
+    "issueDate": "Feb 2026",
+    "credentialType": "Training Badge"
+    },
+    {
+      "name": "Data Visualization and Dashboards with Excel and Cognos",
+      "issuer": "IBM",
+      "issueDate": "Jul 2025",
+      "credentialType": "Professional Certificate"
+    },
+    {
+      "name": "Excel Basics for Data Analysis",
+      "issuer": "IBM",
+      "issueDate": "May 2025",
+      "credentialType": "Professional Certificate"
+    },
+    {
+      "name": "Open Source Tools for Data Science",
+      "issuer": "IBM",
+      "issueDate": "Aug 2019",
+      "credentialType": "Digital Badge"
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Customer Churn Prediction & Explainability System",
+      "description": "Built an end-to-end ML system to predict customer churn using structured telecom data. Implemented preprocessing pipelines, trained Logistic Regression models with threshold optimization, and integrated SHAP for explainability. Deployed as a FastAPI service with Dockerized infrastructure. Technologies: Python, Pandas, NumPy, Scikit-learn, SHAP, FastAPI, Docker."
+    },
+    {
+      "name": "Content-Based Movie Recommendation System",
+      "description": "Developed a recommendation system using textual feature engineering and cosine similarity. Persisted model artifacts for reproducible inference and deployed using Streamlit. Technologies: Python, Scikit-learn, Pandas, Streamlit."
+    },
+    {
+      "name": "Energy Consumption Forecasting System",
+      "description": "Designed a time-series forecasting system using engineered temporal features and regression models. Deployed real-time prediction service via FastAPI. Technologies: Python, Pandas, Scikit-learn, FastAPI, Docker."
+    },
+    {
+      "name": "Dynamic Pricing Optimization Engine",
+      "description": "Built a pricing optimization system using demand prediction with XGBoost and revenue simulations. Exposed inference endpoints via FastAPI. Technologies: Python, XGBoost, Scikit-learn, FastAPI."
+    },
+    {
+      "name": "Gold Price Anomaly Detection System",
+      "description": "Implemented anomaly detection on gold price data using Lorentzian distance and statistical thresholding. Technologies: Python, Pandas, NumPy, Scikit-learn, Matplotlib."
+    },
+    {
+      "name": "Titanic Survival Prediction System",
+      "description": "Built ensemble classification models using XGBoost and CatBoost to predict passenger survival. Technologies: Python, Scikit-learn, XGBoost, CatBoost."
+    },
+    {
+      "name": "House Price Prediction with Stacked Ensembles",
+      "description": "Developed regression models with stacked ensembles and optimized using GridSearchCV. Technologies: Python, Scikit-learn, XGBoost."
+    },
+    {
+      "name": "OCR_SANSKRIT",
+      "description": "OCR pipeline to extract Sanskrit text from PDFs and store bounding box coordinates in JSON format. Technologies: Python, Tesseract-OCR, OpenCV."
+    }
+  ]
+}
